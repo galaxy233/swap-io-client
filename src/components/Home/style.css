@@ -1,0 +1,7 @@
+.jumbotron {
+  background: url("../../assets/clem.jpg");
+  background-position: left; }
+  .jumbotron h1 {
+    color: white; }
+  .jumbotron div {
+    margin: 50px; }
