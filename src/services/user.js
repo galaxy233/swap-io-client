@@ -1,17 +1,4 @@
-import axios from 'axios';
-
-const getToken = () => {
-  return localStorage.getItem("access_token");
-}
-
-const createAxios = () => {
-  return axios.create({
-    baseURL: "http://localhost:3000/api/",
-    headers: {
-      'Authorization': 'Bearer ' + getToken()
-    }
-  })
-}
+import createAxios from './createAxiosWithToken';
 
 export const createUser = (username) => {
   let data = {"username" : username};

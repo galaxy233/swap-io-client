@@ -1,0 +1,16 @@
+.display {
+  background-color: white;
+  border: 1px solid;
+  height: 100%;
+}
+
+.display > div {
+  height: 100%;
+}
+
+@media (min-width: 800px) {
+  .display {
+    margin-left: 260px;
+    margin-right: 10px;
+  }
+}

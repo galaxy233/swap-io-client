@@ -27,30 +27,34 @@ const authNav = (
 
 const Navigation = ({ auth, history }) => {
     return (
-      <Navbar fluid>
+      <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
             Swap
           </Navbar.Brand>
+          <Navbar.Toggle />
         </Navbar.Header>
-        <Nav>
-          <LinkContainer to="/items">
-            <NavItem>Items</NavItem>
-          </LinkContainer>
 
-          <LinkContainer to="/trades">
-            <NavItem>Trades</NavItem>
-          </LinkContainer>
+        <Navbar.Collapse>
+          <Nav>
+            <LinkContainer to="/items">
+              <NavItem>Items</NavItem>
+            </LinkContainer>
 
+            <LinkContainer to="/trades">
+              <NavItem>Trades</NavItem>
+            </LinkContainer>
+          </Nav>
+          <Nav pullRight>
+            { auth.isAuthenticated() && authNav }
 
-        </Nav>
-        <Nav pullRight>
-          { auth.isAuthenticated() && authNav }
+            <NavItem>
+              <FontAwesome onClick={ auth.isAuthenticated() ? () => auth.logout(history) : auth.login } name="sign-in"/>
+            </NavItem>
+          </Nav>
 
-          <NavItem>
-            <FontAwesome onClick={ auth.isAuthenticated() ? () => auth.logout(history) : auth.login } name="sign-in"/>
-          </NavItem>
-        </Nav>
+        </Navbar.Collapse>
+
       </Navbar>
   )
 }
