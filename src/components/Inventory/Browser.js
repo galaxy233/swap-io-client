@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchItems } from '../../ducks/actions';
+import { fetchItems } from '../../services/item';
 import FontAwesome from 'react-fontawesome';
 import ScaleLoader from 'halogen/ScaleLoader';
 
@@ -38,29 +37,34 @@ class Browser extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      items: [],
       page: 1
     }
   }
 
   componentDidMount() {
-    this.props.fetchItems()
+    fetchItems().then(items => {
+      this.setState({items})
+    })
   }
 
   render() {
     return (
       <div>
         {
-          this.props.isFetching
+          this.state.items.length
             ?
-              <ScaleLoader color="black"/>
+              genGrid(this.state.items)
             :
-            genGrid(this.props.items)
+            <ScaleLoader color="black"/>
         }
         <Row>
           <Col lg={12}>
             <div className="fa-container">
               <FontAwesome name="arrow-circle-o-left" size="3x"/>
-              <FontAwesome name="plus-circle" size="3x"/>
+              <Link to="/inventory/new">
+                <FontAwesome name="plus-circle" size="3x"/>
+              </Link>
               <FontAwesome name="arrow-circle-o-right" size="3x"/>
             </div>
           </Col>
@@ -90,4 +94,4 @@ const Item = ({ name, id, image_url }) => {
   )
 }
 
-export default connect(state => state, { fetchItems })(Browser);
+export default Browser;

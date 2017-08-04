@@ -11,6 +11,16 @@ export const updateItem = (item, id) => {
   .then(res => res.data)
 }
 
+export const fetchItem = (id) => {
+  return createAxios().get(`item/${id}`)
+  .then(res => res.data)
+}
+
+export const fetchItems = (id) => {
+  return createAxios().get("items")
+  .then(res => res.data)
+}
+
 export const uploadImage = (file) => {
   return createAxios().post("aws/getsignedurl", {
     filename: file.name,

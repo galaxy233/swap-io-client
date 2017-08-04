@@ -23,7 +23,7 @@ class Inventory extends Component {
         </Row>
         <Route exact path="/inventory" component={ Browser }/>
         <Route path="/inventory/new" component={ Edit }/>
-        <Route path="/inventory/edit/:id" component={ Edit }/>
+        <Route path="/inventory/edit/:id" render={ (props) => <Edit editMode={true} {...props} /> }/>
       </Grid>
     )
   }

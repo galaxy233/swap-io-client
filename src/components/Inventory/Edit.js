@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { connect } from 'react-redux';
 import FontAwesome from 'react-fontawesome';
+
 import Form from './Form';
 import ImageForm from './ImageForm';
-import { uploadImage, newItem, updateItem } from '../../services/item';
-import { fetchItems } from '../../ducks/actions';
+
+import { uploadImage, newItem, updateItem, fetchItems, fetchItem } from '../../services/item';
 import genAlert from './Alerts.js';
 
 class Edit extends Component {
@@ -106,8 +106,8 @@ class Edit extends Component {
       image3: this.state.images[2],
       image4: this.state.images[3]
     }
-    if (this.props.item) {
-      updateItem(item, this.props.item.id)
+    if (this.props.editMode) {
+      updateItem(item, this.props.match.params.id)
         .then(() => {
           this.setState({alert:"edit"})
         })
@@ -124,35 +124,18 @@ class Edit extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.item) {
-      this.props.fetchItems()
-    } else {
-      const {name, description, condition, zipcode, image1, image2, image3, image4} = this.props.item;
-      this.setState({
-        name: name,
-        description: description,
-        condition: condition,
-        zipcode: zipcode,
-        images: [image1, image2, image3, image4],
-        selectedImage: 0,
-        toUpload: new Array(4),
-        alert: null
+    if (this.props.editMode) {
+      fetchItem(this.props.match.params.id)
+      .then(item => {
+        this.setState({
+          name: item.name,
+          description: item.description,
+          condition: item.condition,
+          zipcode: item.zipcode,
+          images: [item.image1, item.image2, item.image3, item.image4]
+        })
       })
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const {name, description, condition, zipcode, image1, image2, image3, image4} = nextProps.item;
-    this.setState({
-      name: name,
-      description: description,
-      condition: condition,
-      zipcode: zipcode,
-      images: [image1, image2, image3, image4],
-      selectedImage: 0,
-      toUpload: new Array(4),
-      alert: null
-    })
   }
 
   render() {
@@ -187,10 +170,4 @@ class Edit extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    item: state.items.find(item => item.id == ownProps.match.params.id)
-  }
-}
-
-export default connect(mapStateToProps, { fetchItems })(Edit);
+export default Edit;
