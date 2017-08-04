@@ -11,6 +11,11 @@ export const updateItem = (item, id) => {
   .then(res => res.data)
 }
 
+export const deleteItem = (id) => {
+  return createAxios().delete(`item/${id}`)
+  .then(res => res.data)
+}
+
 export const fetchItem = (id) => {
   return createAxios().get(`item/${id}`)
   .then(res => res.data)

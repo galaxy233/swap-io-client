@@ -110,6 +110,7 @@ class Edit extends Component {
       updateItem(item, this.props.match.params.id)
         .then(() => {
           this.setState({alert:"edit"})
+          setTimeout(() => this.props.history.replace("/inventory"), 1500)
         })
         .catch(() => this.setState({alert:"fail"}))
     } else {

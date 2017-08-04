@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { fetchItems } from '../../services/item';
+import { fetchItems, deleteItem } from '../../services/item';
 import FontAwesome from 'react-fontawesome';
 import ScaleLoader from 'halogen/ScaleLoader';
 
-const genGrid = (items) => {
+const genGrid = (items, handleDelete) => {
   let rows = []
   let cols = []
   items.forEach(item => {
@@ -19,7 +19,12 @@ const genGrid = (items) => {
     }
     cols.push((
       <Col lg={4}>
-        <Item name={ item.name } id={ item.id } image_url={ item.image1 }/>
+        <Item
+          name={ item.name }
+          id={ item.id }
+          image_url={ item.image1 }
+          handleDelete={ handleDelete }
+        />
       </Col>
     ))
   })
@@ -40,11 +45,20 @@ class Browser extends Component {
       items: [],
       page: 1
     }
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount() {
     fetchItems().then(items => {
       this.setState({items})
+    })
+  }
+
+  handleDelete(id) {
+    deleteItem(id).then(() => {
+      fetchItems().then(items => {
+        this.setState({items})
+      })
     })
   }
 
@@ -54,7 +68,7 @@ class Browser extends Component {
         {
           this.state.items.length
             ?
-              genGrid(this.state.items)
+              genGrid(this.state.items, this.handleDelete)
             :
             <ScaleLoader color="black"/>
         }
@@ -74,7 +88,7 @@ class Browser extends Component {
   }
 }
 
-const Item = ({ name, id, image_url }) => {
+const Item = ({ name, id, image_url, handleDelete }) => {
   return (
     <div className="inventory-item">
       <div>
@@ -86,7 +100,7 @@ const Item = ({ name, id, image_url }) => {
             <FontAwesome name="minus-circle"/>
           </Link>
 
-          <FontAwesome name="times-circle"/>
+          <FontAwesome onClick={ () => handleDelete(id) } name="times-circle"/>
         </div>
       </div>
       <Thumbnail href="#" alt="171x180" src={ image_url }/>
