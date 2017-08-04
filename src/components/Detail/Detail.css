@@ -1,0 +1,31 @@
+.selected-image {
+  margin-top: 20px; }
+
+.item-info {
+  color: #5D5D5D; }
+
+.item-description {
+  margin: 50px 0px; }
+
+.item-details {
+  display: flex;
+  justify-content: space-between; }
+
+.image-selector {
+  background-color: white;
+  border: 1px solid #1aa9bc;
+  border-radius: 1px;
+  display: inline-block;
+  padding: 10px; }
+
+.image-selector-image {
+  float: left;
+  margin: 0px 5px;
+  padding: 6px; }
+  .image-selector-image img {
+    height: 50px;
+    width: 50px; }
+
+.selected {
+  padding: 5px;
+  border: 1px solid #c4c4c4; }
