@@ -1,0 +1,32 @@
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import { Grid, Row } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+import Browser from './Browser';
+import Edit from './Edit';
+import { Header } from '../shared';
+
+import items from './items.json';
+
+import './Inventory.css';
+
+class Inventory extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <Grid>
+        <Row className="show-grid">
+          <Header name="Inventory"/>
+        </Row>
+        <Route exact path="/inventory" component={ Browser }/>
+        <Route path="/inventory/new" component={ Edit }/>
+        <Route path="/inventory/edit/:id" component={ Edit }/>
+      </Grid>
+    )
+  }
+}
+
+export default Inventory;

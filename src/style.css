@@ -1,8 +1,19 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fef9f7;
-  color: #1aa9bc;
-}
+  background-color: #1aa9bc;
+  color: #1aa9bc; }
+
+.container {
+  background-color: #fef9f7; }
 
 .btn-primary {
   background-color: #1aa9bc; }
+
+.header-text {
+  text-align: center;
+  margin-bottom: 50px; }
+  .header-text > div {
+    color: #5D5D5D;
+    display: inline-block;
+    font-size: 32px;
+    border-bottom: 2px solid #1aa9bc; }

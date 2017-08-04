@@ -1,20 +1,18 @@
 @import '../../assets/colors.sass'
 
 .navbar
-  background-color: $blue
+  background-color: $beige
+  color: $blue
   border-radius: 0
   border-top: 0
   border-left: 0
   border-right: 0
-  border-bottom: 5px solid $yellow
-
-.navbar-default .navbar-brand
-    color: white
 
 .navbar-default .navbar-nav > li > a
-  color: white
-
-.sidebar
-  height: 100%
-  width: 350px
   color: $blue
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover
+  background-color: $blue
+  color: white

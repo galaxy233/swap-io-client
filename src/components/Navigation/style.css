@@ -1,18 +1,16 @@
 .navbar {
-  background-color: #1aa9bc;
+  background-color: #fef9f7;
+  color: #1aa9bc;
   border-radius: 0;
   border-top: 0;
   border-left: 0;
-  border-right: 0;
-  border-bottom: 5px solid #ffeb00; }
-
-.navbar-default .navbar-brand {
-  color: white; }
+  border-right: 0; }
 
 .navbar-default .navbar-nav > li > a {
-  color: white; }
-
-.sidebar {
-  height: 100%;
-  width: 350px;
   color: #1aa9bc; }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+  background-color: #1aa9bc;
+  color: white; }

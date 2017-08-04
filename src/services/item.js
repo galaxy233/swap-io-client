@@ -6,6 +6,11 @@ export const newItem = (item) => {
   .then(res => res.data)
 }
 
+export const updateItem = (item, id) => {
+  return createAxios().put(`item/${id}`, item)
+  .then(res => res.data)
+}
+
 export const uploadImage = (file) => {
   return createAxios().post("aws/getsignedurl", {
     filename: file.name,

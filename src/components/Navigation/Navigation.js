@@ -4,6 +4,8 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
+import swap from '../../assets/swap.png';
+
 import './style.css'
 
 const authNav = (
@@ -30,15 +32,19 @@ const Navigation = ({ auth, history }) => {
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            Swap
+            <img src={ swap }/>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
 
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to="/items">
-              <NavItem>Items</NavItem>
+            <LinkContainer to="/search">
+              <NavItem>Search</NavItem>
+            </LinkContainer>
+
+            <LinkContainer to="/inventory">
+              <NavItem>Inventory</NavItem>
             </LinkContainer>
 
             <LinkContainer to="/trades">

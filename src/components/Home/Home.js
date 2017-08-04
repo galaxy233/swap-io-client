@@ -1,12 +1,10 @@
 import React from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
-import Sidebar from '../Sidebar/Sidebar';
 import './style.css'
 
 const Home = () => {
   return (
     <div>
-      <Sidebar/>
       <Jumbotron>
         <div>
           <h1>Welcome to Swap.IO</h1>

@@ -1,0 +1,54 @@
+@import '../../assets/colors.sass'
+
+.inventory-item
+  > div
+    height: 35px
+    background-color: $blue
+    text-align: center
+    color: white
+    display: flex
+    align-items: center
+    justify-content: space-between
+    div
+      &:first-child
+        margin-left: 10px
+        font-size: 16px
+    span
+      margin: 2px
+      &:first-child
+        &:hover
+          color: $yellow
+      &:last-child
+        margin-right: 5px
+        &:hover
+          color: red
+  a
+    height: 100%
+  img
+    height: 250px
+
+.fa-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  span
+    margin-bottom: 25px
+    transition: 0.5 ease
+    color: $blue
+    &:hover
+      color: $yellow
+
+.selected-image
+  height: 250px
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-bottom: 10px
+  img
+    max-height: 100%
+    max-width: 100%
+
+.dropzone
+  margin-bottom: 10px
+  img
+    width: 100%
