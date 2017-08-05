@@ -1,5 +1,6 @@
 import axios from 'axios';
 import createAxios from './createAxiosWithToken';
+import { BASE_URL } from './createAxiosWithToken';
 
 export const newItem = (item) => {
   return createAxios().post("item", item)
@@ -17,7 +18,7 @@ export const deleteItem = (id) => {
 }
 
 export const fetchItem = (id) => {
-  return createAxios().get(`item/${id}`)
+  return axios.get(`${BASE_URL}item/${id}`)
   .then(res => res.data)
 }
 

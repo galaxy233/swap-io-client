@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row, Image } from 'react-bootstrap';
+import { fetchItem } from '../../services/item';
 import ScaleLoader from 'halogen/ScaleLoader';
 import ImageSelect from './ImageSelect';
 
 import item from './item.json';
 import './Detail.css';
 
-const images = ['https://images-na.ssl-images-amazon.com/images/I/41K32T04S3L.jpg','https://swap-io.s3.amazonaws.com/1897-2__.jpg','https://swap-io.s3.amazonaws.com/apollocoin.png','https://swap-io.s3.amazonaws.com/1w8VyzK.jpg']
-
 class Detail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedImage: 0
+      selectedImage: 0,
+      item: {}
     }
     this.updateSelectedImage = this.updateSelectedImage.bind(this)
   }
@@ -22,23 +22,29 @@ class Detail extends Component {
   }
 
   componentDidMount() {
-    return 0
+    fetchItem(this.props.match.params.id)
+    .then(item => this.setState({item}))
   }
 
   render() {
     return (
-      <DetailView
-        item={ item }
-        selectedImage={ this.state.selectedImage }
-        updateSelectedImage={ this.updateSelectedImage }
-      />
+      <div>
+        {
+          this.state.item.name &&
+          <DetailView
+            item={ this.state.item }
+            selectedImage={ this.state.selectedImage }
+            updateSelectedImage={ this.updateSelectedImage }
+          />
+        }
+      </div>
     )
   }
 }
 
 const DetailView = ({ item, selectedImage, updateSelectedImage }) => {
 
-  // let images = [item.images1, item.image2, item.image3, item.image4]
+  let images = [item.image1, item.image2, item.image3, item.image4]
 
   return (
     <Grid>
@@ -79,9 +85,9 @@ const Info = ({ item }) => {
 
 const Contact = () => {
   return (
-    <div>
-      <button>Contact</button>
-      <button>Trade</button>
+    <div className="item-contact">
+      <div>Contact</div>
+      <div>Trade</div>
     </div>
   )
 }

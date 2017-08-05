@@ -1,8 +1,20 @@
 .search-bar {
-  text-align: center; }
+  text-align: center;
+  color: #5D5D5D; }
   .search-bar input {
     width: 450px;
     margin: 20px; }
+  .search-bar span {
+    margin: 10px; }
+    .search-bar span:hover {
+      color: #1aa9bc; }
+
+.search-options {
+  text-align: center;
+  margin-bottom: 20px; }
+  .search-options input {
+    margin: 0px 10px;
+    width: 50px; }
 
 .search-results {
   margin-bottom: 50px; }

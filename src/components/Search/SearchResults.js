@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SearchItem = ({ item }) => {
   return (
@@ -9,7 +10,9 @@ const SearchItem = ({ item }) => {
           <div className="img-container">
             <Image src={ item.image1 } thumbnail />
           </div>
-          <h4>{ item.name }</h4>
+          <Link to={ `/item/${item.id}` }>
+            <h4>{ item.name }</h4>
+          </Link>
         </div>
         <h5>{ item.distance + " miles" }</h5>
       </div>

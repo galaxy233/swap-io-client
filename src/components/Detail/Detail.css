@@ -11,6 +11,9 @@
   display: flex;
   justify-content: space-between; }
 
+.item-images {
+  text-align: center; }
+
 .image-selector {
   background-color: white;
   border: 1px solid #1aa9bc;
@@ -19,8 +22,8 @@
   padding: 10px; }
 
 .image-selector-image {
-  float: left;
   margin: 0px 5px;
+  float: left;
   padding: 6px; }
   .image-selector-image img {
     height: 50px;
@@ -29,3 +32,18 @@
 .selected {
   padding: 5px;
   border: 1px solid #c4c4c4; }
+
+.item-contact {
+  margin-top: 100px; }
+  .item-contact div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid #1aa9bc;
+    width: 250px;
+    height: 50px; }
+
+.item-contact {
+  display: flex; }
