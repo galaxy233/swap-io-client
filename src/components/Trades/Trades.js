@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom';
+
 import { Header } from '../shared';
 
 import './Trades.css';
@@ -102,9 +104,11 @@ const TradesList = (props) => {
 
 const TradesItem = (props) => {
   return (
-    <div className="trades-item">
-      { `${props.receiving_name} (${props.other_username})` }
-    </div>
+    <Link to={`/trade/${props.id}`}>
+      <div className="trades-item">
+        { `${props.receiving_name} (${props.other_username})` }
+      </div>
+    </Link>
   )
 }
 
