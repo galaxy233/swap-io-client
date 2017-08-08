@@ -5,6 +5,7 @@
   "dependencies": {
     "auth0-js": "^8.8.0",
     "axios": "^0.16.2",
+    "geocoder": "^0.2.3",
     "halogen": "^0.2.0",
     "jwks-rsa": "^1.2.0",
     "node-sass-chokidar": "0.0.3",

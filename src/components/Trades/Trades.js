@@ -10,8 +10,6 @@ import './Trades.css';
 
 import { fetchTrades } from '../../services/trade';
 
-import trades from './trades.json';
-
 class Trades extends Component {
   constructor(props) {
     super(props)

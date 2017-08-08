@@ -20,6 +20,7 @@ class Callback extends Component {
   }
 
   handleSubmit() {
+
     createUser(this.state.textField).then(user => {
       if (user.id) {
         localStorage.setItem("username", user.username)
@@ -43,6 +44,7 @@ class Callback extends Component {
         getUser().then(user => {
           if (user.id) {
             localStorage.setItem("username", user.username)
+            localStorage.setItem("zipcode", user.zipcode)
             history.replace('/profile')
           } else {
             this.setState({
