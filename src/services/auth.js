@@ -9,8 +9,7 @@ export default class Auth {
       clientID: 'ZYhR5yxNmx0Oywmv170VZiyMK0mXXgC4',
       redirectUri: 'http://localhost:3001/callback',
       audience: 'http://swap.io/api/',
-      responseType: 'token id_token',
-      scope: 'openid'
+      responseType: 'token id_token'
     });
 
     this.login = this.login.bind(this);

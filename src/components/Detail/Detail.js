@@ -3,6 +3,7 @@ import { Grid, Col, Row, Image } from 'react-bootstrap';
 import { fetchItem } from '../../services/item';
 import ScaleLoader from 'halogen/ScaleLoader';
 import ImageSelect from './ImageSelect';
+import { TradeModal } from './TradeModal';
 
 import item from './item.json';
 import './Detail.css';
@@ -12,13 +13,24 @@ class Detail extends Component {
     super(props)
     this.state = {
       selectedImage: 0,
-      item: {}
+      item: {},
+      showModal: false
     }
     this.updateSelectedImage = this.updateSelectedImage.bind(this)
+    this.openModal = this.openModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
 
   updateSelectedImage(idx) {
     this.setState({selectedImage:idx})
+  }
+
+  openModal() {
+    this.setState({showModal:true})
+  }
+
+  closeModal() {
+    this.setState({showModal:false})
   }
 
   componentDidMount() {
@@ -35,6 +47,9 @@ class Detail extends Component {
             item={ this.state.item }
             selectedImage={ this.state.selectedImage }
             updateSelectedImage={ this.updateSelectedImage }
+            showModal={ this.state.showModal }
+            openModal={ this.openModal }
+            closeModal={ this.closeModal }
           />
         }
       </div>
@@ -42,13 +57,19 @@ class Detail extends Component {
   }
 }
 
-const DetailView = ({ item, selectedImage, updateSelectedImage }) => {
+const DetailView = ({ item, selectedImage, updateSelectedImage, showModal, openModal, closeModal }) => {
 
   let images = [item.image1, item.image2, item.image3, item.image4]
 
   return (
     <Grid>
       <Row>
+        <TradeModal
+          showModal={ showModal }
+          openModal={ openModal }
+          closeModal={ closeModal }
+          item_id={ item.id }
+        />
         <Col lg={6}>
           <div className="item-images">
             <SelectedImage image_url={ images[selectedImage] }/>
@@ -61,7 +82,7 @@ const DetailView = ({ item, selectedImage, updateSelectedImage }) => {
         </Col>
         <Col lg={6}>
           <Info item={ item }/>
-          <Contact/>
+          <Contact openModal={ openModal }/>
         </Col>
       </Row>
     </Grid>
@@ -83,11 +104,11 @@ const Info = ({ item }) => {
   )
 }
 
-const Contact = () => {
+const Contact = ({ openModal }) => {
   return (
     <div className="item-contact">
       <div>Contact</div>
-      <div>Trade</div>
+      <div onClick={ openModal }>Trade</div>
     </div>
   )
 }

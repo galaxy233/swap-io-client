@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "status": "pending",
+        "other_username": "galaxy233",
+        "user_init": false,
+        "trading": 2,
+        "receiving": 3,
+        "receiving_name": "Simon Game",
+        "user_complete": false,
+        "other_user_complete": false
+    },
+    {
+        "id": 2,
+        "status": "pending",
+        "other_username": "galaxy233",
+        "user_init": false,
+        "trading": 2,
+        "receiving": 3,
+        "receiving_name": "Simon Game",
+        "user_complete": false,
+        "other_user_complete": false
+    },
+    {
+        "id": 3,
+        "status": "accepted",
+        "other_username": "galaxy233",
+        "user_init": false,
+        "trading": 2,
+        "receiving": 5,
+        "receiving_name": "Apollo",
+        "user_complete": false,
+        "other_user_complete": true
+    },
+    {
+        "id": 4,
+        "status": "pending",
+        "other_username": "galaxy233",
+        "user_init": false,
+        "trading": 2,
+        "receiving": 3,
+        "receiving_name": "Simon Game",
+        "user_complete": false,
+        "other_user_complete": false
+    },
+    {
+        "id": 6,
+        "status": "cancelled",
+        "other_username": "thevjm",
+        "user_init": true,
+        "trading": 2,
+        "receiving": 1,
+        "receiving_name": "Red computer",
+        "user_complete": false,
+        "other_user_complete": false
+    },
+    {
+        "id": 7,
+        "status": "cancelled",
+        "other_username": "thevjm",
+        "user_init": true,
+        "trading": 2,
+        "receiving": 1,
+        "receiving_name": "Red computer",
+        "user_complete": false,
+        "other_user_complete": false
+    },
+    {
+        "id": 8,
+        "status": "pending",
+        "other_username": "thevjm",
+        "user_init": true,
+        "trading": 2,
+        "receiving": 1,
+        "receiving_name": "Red computer",
+        "user_complete": true,
+        "other_user_complete": true
+    }
+]

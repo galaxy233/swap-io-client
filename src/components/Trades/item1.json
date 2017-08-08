@@ -1,0 +1,14 @@
+{
+    "id": 9,
+    "name": "Simon Game",
+    "description": "A brand new Simon game",
+    "user_id": 3,
+    "condition": "New",
+    "zipcode": "11111",
+    "image1": "https://swap-io.s3.amazonaws.com/1897-2__.jpg",
+    "image2": null,
+    "image3": null,
+    "image4": null,
+    "timestamp": "2017-08-08T05:54:43.980Z",
+    "usd_value": null
+}
