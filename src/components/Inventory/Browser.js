@@ -3,7 +3,7 @@ import { Grid, Row, Col, Thumbnail } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { fetchItems, deleteItem } from '../../services/item';
 import FontAwesome from 'react-fontawesome';
-import ScaleLoader from 'halogen/ScaleLoader';
+import Loader from 'halogen/FadeLoader';
 
 const genGrid = (items, handleDelete) => {
   let rows = []
@@ -41,10 +41,7 @@ const genGrid = (items, handleDelete) => {
 class Browser extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      items: [],
-      page: 1
-    }
+    this.state = {}
     this.handleDelete = this.handleDelete.bind(this)
   }
 
@@ -64,22 +61,31 @@ class Browser extends Component {
 
   render() {
     return (
-      <div>
+      <div className="browser">
         {
-          this.state.items.length
+          this.state.items
             ?
-              genGrid(this.state.items, this.handleDelete)
+            this.state.items.length
+            ?
+            genGrid(this.state.items, this.handleDelete)
             :
-            <ScaleLoader color="black"/>
+            <p>No items found. Click below to add a new item!</p>
+          :
+          <div className="loader">
+            <Loader color="#1aa9bc"/>
+            <p>
+              Loading items...
+            </p>
+          </div>
         }
         <Row>
           <Col lg={12}>
             <div className="fa-container">
-              <FontAwesome name="arrow-circle-o-left" size="3x"/>
+              {/* <FontAwesome name="arrow-circle-o-left" size="3x"/> */}
               <Link to="/inventory/new">
                 <FontAwesome name="plus-circle" size="3x"/>
               </Link>
-              <FontAwesome name="arrow-circle-o-right" size="3x"/>
+              {/* <FontAwesome name="arrow-circle-o-right" size="3x"/> */}
             </div>
           </Col>
         </Row>

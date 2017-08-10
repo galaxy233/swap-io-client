@@ -26,7 +26,7 @@
 
 .fa-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; }
   .fa-container span {
     margin-bottom: 25px;
@@ -44,6 +44,10 @@
   .selected-image img {
     max-height: 100%;
     max-width: 100%; }
+
+.browser p {
+  text-align: center;
+  margin-bottom: 100px; }
 
 .dropzone {
   margin-bottom: 10px; }

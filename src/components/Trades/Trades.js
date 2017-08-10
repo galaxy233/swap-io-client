@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
-import { Header } from '../shared';
+import { Header, Loader } from '../shared';
 
 import './Trades.css';
 
@@ -14,7 +14,6 @@ class Trades extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      trades: [],
       filter: 'pending'
     }
     this.changeFilter = this.changeFilter.bind(this)
@@ -40,12 +39,20 @@ class Trades extends Component {
         </Row>
         <Row className="show-grid">
           <Col lg={12}>
-            { this.state.trades.length &&
-              <TradesBox
-                filter={ this.state.filter }
-                trades={ this.state.trades }
-                changeFilter={ this.changeFilter }
-              />
+            {
+              this.state.trades
+              ?
+                this.state.trades.length
+                ?
+                <TradesBox
+                  filter={ this.state.filter }
+                  trades={ this.state.trades }
+                  changeFilter={ this.changeFilter }
+                />
+                :
+                <p style={{textAlign:"center",marginBottom:"50px"}}>No trades found.</p>
+              :
+              <Loader text="Loading your trades..."/>
             }
           </Col>
         </Row>

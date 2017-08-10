@@ -30,6 +30,19 @@ export default class Auth {
     history.replace('/home');
   }
 
+  handleAuth() {
+    return new Promise((resolve, reject) => {
+      this.auth0.parseHash((err, authResult) => {
+        if (authResult && authResult.accessToken && authResult.idToken) {
+          this.setSession(authResult);
+          resolve()
+        } else {
+          reject(err)
+        }
+      })
+    })
+  }
+
   isAuthenticated() {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt && localStorage.getItem('username');

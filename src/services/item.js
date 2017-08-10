@@ -3,6 +3,7 @@ import createAxios from './createAxiosWithToken';
 import { BASE_URL } from './createAxiosWithToken';
 
 export const newItem = (item) => {
+  console.log(item);
   return createAxios().post("item", item)
   .then(res => res.data)
 }

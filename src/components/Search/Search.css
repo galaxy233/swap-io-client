@@ -14,7 +14,9 @@
   margin-bottom: 20px; }
   .search-options input {
     margin: 0px 10px;
-    width: 50px; }
+    width: 60px; }
+  .search-options select {
+    margin: 0px 10px; }
 
 .search-results {
   margin-bottom: 50px; }

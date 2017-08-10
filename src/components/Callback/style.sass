@@ -1,5 +1,34 @@
-.loader
-  width: 250px
-  margin: 250px auto
-  display: flex
-  justify-content: center
+@import '../../assets/colors.sass'
+
+.user-info-box
+  color: white
+  height: 650px
+
+.username-box
+  color: $black
+  width: 320px
+  margin: 50px auto
+  background-color: white
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25)
+  padding: 0 15px
+  border: 15px solid white
+  border-radius: 10px
+  text-align: center
+  h1
+    font-size: 24px
+  .invalid
+    input, input:focus
+    border-bottom: 2px solid red !important
+  input
+    width: 80%
+    height: 50px
+    display: block
+    margin: 0 auto 15px
+    padding: 0 15px
+    border: none
+    border-bottom: 2px solid #ebebeb
+  input:focus
+    outline: none
+    border-bottom: 2px solid $blue
+  button
+    margin: 25px 0px

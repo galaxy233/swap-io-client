@@ -11,10 +11,7 @@ import './style.css'
 const authNav = (
   <Nav>
     <NavItem>
-      Welcome, { localStorage.getItem('username') }
-    </NavItem>
-    <NavItem>
-      <LinkContainer to="/items/new">
+      <LinkContainer to="/inventory/new">
         <FontAwesome name="plus"/>
       </LinkContainer>
 

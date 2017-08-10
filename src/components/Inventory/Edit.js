@@ -16,6 +16,7 @@ class Edit extends Component {
       description: '',
       condition: 'New',
       zipcode: '',
+      usd_value: '',
       images: new Array(4),
       selectedImage: 0,
       toUpload: new Array(4),
@@ -26,6 +27,7 @@ class Edit extends Component {
     this.updateDesc = this.updateDesc.bind(this)
     this.updateCondition = this.updateCondition.bind(this)
     this.updateZipcode = this.updateZipcode.bind(this)
+    this.updateUSDValue = this.updateUSDValue.bind(this)
     this.updateSelectedImage = this.updateSelectedImage.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.onDrop = this.onDrop.bind(this)
@@ -52,6 +54,12 @@ class Edit extends Component {
   updateZipcode(val) {
     this.setState({
       zipcode: val
+    })
+  }
+
+  updateUSDValue(val) {
+    this.setState({
+      usd_value: val
     })
   }
 
@@ -101,6 +109,7 @@ class Edit extends Component {
       description: this.state.description,
       condition: this.state.condition,
       zipcode: this.state.zipcode,
+      usd_value: this.state.usd_value,
       image1: this.state.images[0],
       image2: this.state.images[1],
       image3: this.state.images[2],
@@ -133,7 +142,8 @@ class Edit extends Component {
           description: item.description,
           condition: item.condition,
           zipcode: item.zipcode,
-          images: [item.image1, item.image2, item.image3, item.image4]
+          images: [item.image1, item.image2, item.image3, item.image4],
+          usd_value: item.usd_value
         })
       })
     }
@@ -162,7 +172,9 @@ class Edit extends Component {
               condition={this.state.condition}
               updateCondition={this.updateCondition}
               zipcode={this.state.zipcode}
+              usd_value={this.state.usd_value}
               updateZipcode={this.updateZipcode}
+              updateUSDValue={this.updateUSDValue}
               handleSubmit={this.handleSubmit}
             />
           </Col>
