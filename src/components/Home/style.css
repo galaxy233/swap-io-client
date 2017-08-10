@@ -1,7 +1,68 @@
+.landing-intro {
+  background-color: #fef9f7;
+  margin-top: -45px; }
+
 .jumbotron {
-  background: url("../../assets/clem.jpg");
-  background-position: left; }
-  .jumbotron h1 {
-    color: white; }
+  background: url("../../assets/clem_cropped_2.jpg");
+  background-position: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  color: white; }
   .jumbotron div {
     margin: 50px; }
+
+.container-fluid .jumbotron {
+  border-radius: 0px; }
+
+.logo-box {
+  text-align: center;
+  margin: 50px 0px;
+  font-size: 36px; }
+  .logo-box img {
+    max-height: 150px;
+    margin-bottom: 50px; }
+
+@media (min-width: 768px) {
+  .grid-divider {
+    padding-bottom: 20px;
+    position: relative;
+    padding: 0; }
+  .grid-divider > [class*='col-'] {
+    position: static; }
+  .grid-divider > [class*='col-']:nth-child(n+2):before {
+    content: "";
+    border-left: 1px solid #DDD;
+    position: absolute;
+    top: 0;
+    bottom: 0; }
+  .col-padding {
+    padding: 0 15px; } }
+
+.featured .container {
+  background-color: #1aa9bc; }
+
+.featured .header-text {
+  margin-top: 20px; }
+  .featured .header-text > div {
+    color: white;
+    border-bottom-color: white; }
+
+.featured-item {
+  background-color: #fef9f7;
+  height: 250px;
+  width: 100%;
+  margin-bottom: 50px; }
+
+.landing-search-intro {
+  text-align: center; }
+
+.landing-search-box {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px; }
+  .landing-search-box input {
+    font-size: 48px;
+    width: 350px;
+    height: 50px; }
+  .landing-search-box button {
+    margin: 0px 20px; }

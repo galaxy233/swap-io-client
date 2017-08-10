@@ -5,6 +5,9 @@ import DebounceInput from 'react-debounce-input';
 import { getUser, createUser, getZipcode, checkUsername } from '../../services/user';
 import './style.css';
 
+import Auth from '../../services/auth';
+const auth = new Auth();
+
 
 class Callback extends Component {
   constructor(props) {
@@ -37,7 +40,7 @@ class Callback extends Component {
   }
 
   componentDidMount() {
-    this.props.auth.handleAuth().then(() => {
+    auth.handleAuth().then(() => {
       getUser().then(user => {
         if (user.id) {
           localStorage.setItem("username", user.username)
