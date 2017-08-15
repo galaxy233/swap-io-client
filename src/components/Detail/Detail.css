@@ -1,5 +1,6 @@
-.selected-image {
-  margin-top: 20px; }
+.detail-selected-image {
+  width: 100%;
+  margin: 10px 0px; }
 
 .item-info {
   color: #5D5D5D; }
@@ -8,17 +9,37 @@
   margin: 50px 0px; }
 
 .item-details {
+  margin: 10px 50px;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-top: 1px solid #1aa9bc;
+  padding-top: 20px; }
+  .item-details div {
+    margin-right: 50px;
+    font-size: 16px;
+    width: 100%; }
+    .item-details div h1 {
+      margin-bottom: 20px;
+      font-size: 48px; }
 
 .item-images {
   text-align: center; }
+
+.social-media span {
+  margin: 20px; }
+
+.image-gallery-image {
+  height: 350px;
+  overflow: hidden; }
+  .image-gallery-image img {
+    width: 100%; }
 
 .image-selector {
   background-color: white;
   border: 1px solid #1aa9bc;
   border-radius: 1px;
   display: inline-block;
+  margin-top: 20px 0px;
   padding: 10px; }
 
 .image-selector-image {
@@ -34,7 +55,9 @@
   border: 1px solid #c4c4c4; }
 
 .item-contact {
-  margin-top: 100px; }
+  margin-top: 50px;
+  display: flex;
+  justify-content: center; }
   .item-contact div {
     display: flex;
     justify-content: center;
@@ -43,7 +66,42 @@
     background-color: white;
     border: 1px solid #1aa9bc;
     width: 250px;
-    height: 50px; }
+    height: 50px;
+    transition: 0.3s all ease; }
+    .item-contact div:hover {
+      background-color: #1aa9bc;
+      border-color: #5D5D5D;
+      color: white; }
 
-.item-contact {
-  display: flex; }
+.modal-content {
+  border-radius: 0px; }
+
+.modal-header {
+  border-bottom: 1px solid #5D5D5D; }
+
+.modal-body {
+  padding: 0px; }
+
+.modal-footer {
+  border-top: 1px solid #5D5D5D; }
+
+.trade-modal-item {
+  height: 35px;
+  text-align: center;
+  border-bottom: 1px solid #5D5D5D;
+  line-height: 35px;
+  transition: 0.1s all ease; }
+  .trade-modal-item:hover {
+    background-color: #1aa9bc;
+    color: white; }
+
+.selected-item {
+  background-color: #1aa9bc;
+  color: white; }
+
+.trade-initiated {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }

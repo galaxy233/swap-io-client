@@ -3,6 +3,7 @@ import {BASE_URL} from './createAxiosWithToken';
 import axios from 'axios';
 import geocoder from 'geocoder';
 
+
 export const createUser = (username, zipcode) => {
   let data = {username, zipcode};
   return createAxios().post("user", data)

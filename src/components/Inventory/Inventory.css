@@ -22,12 +22,15 @@
   height: 100%; }
 
 .inventory-item img {
-  height: 250px; }
+  height: 150px; }
 
 .fa-container {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
   .fa-container span {
     margin-bottom: 25px;
     transition: 0.5 ease;

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Modal, Button, FormGroup, ControlLabel, FormControl} from 'react-bootstrap';
 import { initiateTrade } from '../../../services/trade';
 import { fetchItems } from '../../../services/item';
+import FontAwesome from 'react-fontawesome';
 import items from './items.json';
 
 class TradeModal extends Component {
@@ -66,7 +67,12 @@ class TradeModal extends Component {
             this.state.editNote ?
               <NoteForm note={this.state.note} updateNote={this.updateNote} toggleEditNote={this.toggleEditNote}/>
             :
-            <Inventory items={this.state.items} toggleEditNote={this.toggleEditNote} updateSelectedItemID={this.updateSelectedItemID}/>
+            <Inventory
+              items={this.state.items}
+              toggleEditNote={this.toggleEditNote}
+              updateSelectedItemID={this.updateSelectedItemID}
+              selectedItemID={this.state.selectedItemID}
+            />
 
           }
         </Modal.Body>
@@ -84,7 +90,14 @@ class TradeModal extends Component {
 }
 
 const Inventory = (props) => {
-  const items = props.items.map(item => <InventoryItem name={item.name} id={item.id} updateSelectedItemID={props.updateSelectedItemID}/>)
+  const items = props.items.map(item => (
+    <InventoryItem
+      name={item.name}
+      id={item.id}
+      selectedItemID={props.selectedItemID}
+      updateSelectedItemID={props.updateSelectedItemID}
+    />
+  ))
   return (
     <div>
       <div className="trade-modal-list">
@@ -94,9 +107,11 @@ const Inventory = (props) => {
   )
 }
 
-const InventoryItem = ({ name, id, updateSelectedItemID }) => {
+const InventoryItem = ({ name, id, updateSelectedItemID, selectedItemID }) => {
   return (
-    <div onClick={ () => updateSelectedItemID(id) } className="trade-modal-item">
+    <div onClick={ () => updateSelectedItemID(id) }
+      className={selectedItemID === id ? "trade-modal-item selected-item" : "trade-modal-item"}
+    >
       {name}
     </div>
   )
@@ -114,6 +129,7 @@ const NoteForm = ({note, updateNote, toggleEditNote}) => {
 const TradeInitiated = () => {
   return (
     <div className="trade-initiated">
+      <FontAwesome name="thumbs-up" size="5x"/>
       <h1>Trade Initiated!</h1>
       <p>Seller will be notified and you should hear back from them shortly.</p>
     </div>

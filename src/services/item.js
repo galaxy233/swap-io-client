@@ -1,5 +1,6 @@
 import axios from 'axios';
 import createAxios from './createAxiosWithToken';
+import { getZipcode } from './user';
 import { BASE_URL } from './createAxiosWithToken';
 
 export const newItem = (item) => {
@@ -34,6 +35,7 @@ export const uploadImage = (file) => {
     filetype: file.type
   })
   .then(res => {
+    console.log(res);
 
     let options = {
       headers: {
@@ -42,6 +44,14 @@ export const uploadImage = (file) => {
     }
 
     return axios.put(res.data.url, file, options)
-    .then(res => res.config.url.match(/.*\?/)[0].slice(0,-1))
+    .then(res => {
+      let filename = res.config.url.match(/com\/(.*)\?/)[1]
+      return filename
+    })
   })
+}
+
+export const fetchFeaturedItems = (zipcode) => {
+  return axios.get(BASE_URL + "items/featured")
+  .then(res => res.data);
 }

@@ -3,7 +3,6 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import { Grid, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { searchItems } from '../../services/search';
-import results from './results.json';
 
 import './Search.css';
 
@@ -51,14 +50,21 @@ class Search extends Component {
     let { radius, zipcode, sortBy } = this.state
     searchItems(keywords, zipcode, radius, sortBy)
     .then(results => {
-      console.log(results);
       this.setState({results})
     })
+    .catch(err => console.log(err.message))
+  }
+
+  componentDidMount() {
+    const query = this.props.match.params.query
+    if (query) {
+      this.setState({searchField:query},this.handleSearch)
+    }
   }
 
   render() {
     return (
-      <Grid>
+      <Grid fluid>
         <Row>
           <SearchBar
             toggleOptions={ this.toggleOptions }

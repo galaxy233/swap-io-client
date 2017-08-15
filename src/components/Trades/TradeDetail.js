@@ -3,6 +3,7 @@ import { Grid, Col, Row, Alert } from 'react-bootstrap';
 import { Header } from '../shared';
 import { fetchTrade, acceptTrade, cancelTrade, completeTrade } from '../../services/trade';
 import { fetchItem } from '../../services/item';
+import { getImageResized } from '../../services/image';
 import swap from '../../assets/swap.png';
 
 class TradeDetail extends Component {
@@ -91,11 +92,11 @@ const TradeDetailBox = ({ trade, trading, receiving, acceptTrade, cancelTrade, c
 const TradeDisplay = ({ trading, receiving }) => {
   return (
     <div className="trade-display">
-      <TradeImage image_url={ trading.image1 }/>
+      <TradeImage image_url={ getImageResized(250,250,trading.image1) }/>
       <div>
         <img src={ swap }/>
       </div>
-      <TradeImage image_url={ receiving.image1 }/>
+      <TradeImage image_url={ getImageResized(250,250,receiving.image1) }/>
     </div>
   )
 }

@@ -71,6 +71,7 @@ class Edit extends Component {
 
   onDrop(accepted, rejected, zone) {
     if (accepted.length) {
+      console.log(accepted);
       let images = this.state.images.slice()
       let toUpload = this.state.toUpload.slice()
       images[zone] = accepted[0].preview
@@ -152,7 +153,7 @@ class Edit extends Component {
   render() {
     return (
         <Row>
-          <Col lg={4}>
+          <Col lg={4} md={4} sm={4}>
             <ImageForm
               images={this.state.images}
               selectedImage={this.state.selectedImage}
@@ -160,7 +161,7 @@ class Edit extends Component {
               onDrop={this.onDrop}
             />
           </Col>
-          <Col lg={8}>
+          <Col lg={8} md={8} sm={8}>
             {
               genAlert(this.state.alert)
             }

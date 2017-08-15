@@ -26,13 +26,18 @@ const authNav = (
 )
 
 const Navigation = ({ history }) => {
+  console.log(history);
     return (
       <div>
         <Navbar fluid collapseOnSelect>
           <Navbar.Header>
+
             <Navbar.Brand>
-              <img src={ swap }/>
+              <LinkContainer to="/">
+                <img src={ swap }/>
+              </LinkContainer>
             </Navbar.Brand>
+
             <Navbar.Toggle />
           </Navbar.Header>
 

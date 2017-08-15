@@ -6,8 +6,6 @@ import Browser from './Browser';
 import Edit from './Edit';
 import { Header } from '../shared';
 
-import items from './items.json';
-
 import './Inventory.css';
 
 class Inventory extends Component {
@@ -17,7 +15,7 @@ class Inventory extends Component {
 
   render() {
     return (
-      <Grid>
+      <Grid fluid className="swap-container">
         <Row className="show-grid">
           <Header name="Inventory"/>
         </Row>

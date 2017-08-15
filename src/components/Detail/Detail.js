@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Grid, Col, Row, Image } from 'react-bootstrap';
 import { fetchItem } from '../../services/item';
+import { getImageResized } from '../../services/image';
 import ScaleLoader from 'halogen/ScaleLoader';
 import ImageSelect from './ImageSelect';
 import { TradeModal } from './TradeModal';
+import FontAwesome from 'react-fontawesome';
 
 import item from './item.json';
 import './Detail.css';
@@ -58,44 +60,54 @@ class Detail extends Component {
 }
 
 const DetailView = ({ item, selectedImage, updateSelectedImage, showModal, openModal, closeModal }) => {
-
-  let images = [item.image1, item.image2, item.image3, item.image4]
-
+  const images = [item.image1, item.image2, item.image3, item.image4]
+  .map(image => getImageResized(1170, 350,image))
+  .filter(image => image)
   return (
-    <Grid>
-      <Row>
-        <TradeModal
-          showModal={ showModal }
-          openModal={ openModal }
-          closeModal={ closeModal }
-          item_id={ item.id }
-        />
-        <Col lg={6}>
-          <div className="item-images">
-            <SelectedImage image_url={ images[selectedImage] }/>
-            <ImageSelect
-              images={ images }
-              updateSelectedImage={ updateSelectedImage }
-              selectedImage={ selectedImage }
-            />
-          </div>
-        </Col>
-        <Col lg={6}>
-          <Info item={ item }/>
-          <Contact openModal={ openModal }/>
-        </Col>
-      </Row>
-    </Grid>
+  <Grid fluid>
+    <Row>
+      <TradeModal
+      showModal={ showModal }
+      openModal={ openModal }
+      closeModal={ closeModal }
+      item_id={ item.id }
+    />
+    <SelectedImage image_url={ images[selectedImage] }/>
+    <div style={{textAlign:"center"}}>
+      <ImageSelect
+        images={ images }
+        updateSelectedImage={ updateSelectedImage }
+        selectedImage={ selectedImage }
+      />
+    </div>
+    <div className="item-details">
+      <div>
+        <h1>{ item.name }</h1>
+        <p>{ item.description }</p>
+        <div className="social-media">
+          <FontAwesome name="twitter" size="4x"/>
+          <FontAwesome name="facebook" size="4x"/>
+          <FontAwesome name="instagram" size="4x"/>
+        </div>
+      </div>
+      <iframe
+        width={"333"}
+        height={"250"}
+        frameBorder={"0"} style={{"border":"0"}}
+        src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyA7nSVnMtpMyU4WynRg0fPBuD8BcDYYbck&q=84109"}
+        allowFullScreen>
+      </iframe>
+    </div>
+      <Contact openModal={ openModal }/>
+    </Row>
+  </Grid>
   )
 }
 
 const Info = ({ item }) => {
   return (
     <div className="item-info">
-      <h2>{ item.name }</h2>
-      <div className="item-description">
-        { item.description }
-      </div>
+      <h1>{ item.name }</h1>
       <div className="item-details">
         <div>{ item.condition }</div>
         <div>{ item.zipcode }</div>
@@ -115,7 +127,7 @@ const Contact = ({ openModal }) => {
 
 const SelectedImage = ({ image_url }) => {
   return (
-    <div className="selected-image">
+    <div className="detail-selected-image">
       <Image src={ image_url } thumbnail />
     </div>
   )

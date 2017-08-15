@@ -21,6 +21,7 @@ class Trades extends Component {
 
   componentDidMount() {
     fetchTrades().then(trades => {
+      console.log(trades);
       this.setState({trades})
     })
   }
@@ -33,7 +34,7 @@ class Trades extends Component {
 
   render() {
     return (
-      <Grid>
+      <Grid fluid className="swap-container">
         <Row className="show-grid">
           <Header name="Trades"/>
         </Row>

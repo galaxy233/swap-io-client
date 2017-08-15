@@ -1,16 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import {
-  Inventory,
-  Search,
-  Detail,
-  Trades,
-  TradeDetail,
-  Layout,
-  Callback,
-  Home
-} from './components';
+import { Layout } from './components';
 
 import './style.css'
 

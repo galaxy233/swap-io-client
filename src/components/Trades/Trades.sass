@@ -2,7 +2,9 @@
 
 .trades-box
   background-color: white
-  border: 2px solid $grey
+  border: 1px solid $grey
+  height: 600px
+  margin-bottom: 20px
 
 .trades-filter
   text-align: center
@@ -15,7 +17,7 @@
     display: flex
     align-items: center
     justify-content: center
-    border-right: 2px solid $grey
+    border-right: 1px solid $grey
     &:last-child
       border-right: none
   .selected
@@ -23,7 +25,11 @@
     color: white
 
 .trades-list
-  border-top: 2px solid $grey
+  border-top: 1px solid $grey
+  a
+    text-decoration: none
+    &:hover
+      text-decoration: none
 
 .trades-item
   height: 50px
@@ -31,8 +37,9 @@
   display: flex
   justify-content: center
   align-items: center
-  border-bottom: 2px solid $grey
-  transition: 0.5 all ease
+  border-bottom: 1px solid $grey
+  transition: 0.3s all ease
+  color: $black
   &:last-child
     border-right: none
   &:hover

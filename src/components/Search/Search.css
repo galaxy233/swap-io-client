@@ -19,30 +19,44 @@
     margin: 0px 10px; }
 
 .search-results {
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  padding: 0px 20px; }
+
+.thumbnail {
+  background-color: white;
+  height: 350px; }
+  .thumbnail h4 {
+    font-weight: bold; }
 
 .search-item {
-  height: 150px;
+  height: 100px;
   margin: 0px 20px;
-  padding: 20px;
+  padding: 10px;
   color: #5D5D5D;
   background-color: white;
-  border-top: 2px solid #c4c4c4;
-  border-left: 2px solid #c4c4c4;
-  border-right: 2px solid #c4c4c4; }
-  .search-item:last-child {
-    border-bottom: 2px solid #c4c4c4; }
-  .search-item > div {
-    height: 100%;
+  border-top: 1px solid #c4c4c4;
+  border-left: 1px solid #c4c4c4;
+  border-right: 1px solid #c4c4c4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .search-item div {
     display: flex;
-    justify-content: space-between; }
-    .search-item > div .img-container {
-      height: 100%;
-      width: 150px;
-      float: left;
-      margin-right: 100px; }
-    .search-item > div img {
-      height: 100%; }
-    .search-item > div h4 {
-      font-size: 28px;
-      float: left; }
+    align-items: center; }
+  .search-item .img-container {
+    height: 75px;
+    width: 75px;
+    float: left;
+    margin-right: 50px; }
+  .search-item img {
+    width: 100%;
+    overflow: hidden; }
+  .search-item h4 {
+    font-size: 28px;
+    float: left; }
+  .search-item:last-child {
+    border-bottom: 1px solid #c4c4c4; }
+
+.search-item-info {
+  flex-direction: column;
+  justify-content: space-between; }

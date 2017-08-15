@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #1aa9bc;
+  background-color: white;
   margin-bottom: 60px;
   color: #5D5D5D; }
 
@@ -13,14 +13,18 @@ html {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #fef9f7; }
+  height: 50px;
+  background-color: #5D5D5D; }
+
+.swap-container {
+  min-height: 750px;
+  position: relative; }
 
 .container {
-  background-color: #fef9f7; }
+  background-color: #fff; }
 
 .container-fluid {
-  background-color: #fef9f7; }
+  background-color: #fff; }
 
 .btn {
   border-radius: 0px; }

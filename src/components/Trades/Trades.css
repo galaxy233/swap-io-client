@@ -1,6 +1,8 @@
 .trades-box {
   background-color: white;
-  border: 2px solid #c4c4c4; }
+  border: 1px solid #c4c4c4;
+  height: 600px;
+  margin-bottom: 20px; }
 
 .trades-filter {
   text-align: center;
@@ -13,7 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 2px solid #c4c4c4; }
+    border-right: 1px solid #c4c4c4; }
     .trades-filter div:last-child {
       border-right: none; }
   .trades-filter .selected {
@@ -21,7 +23,11 @@
     color: white; }
 
 .trades-list {
-  border-top: 2px solid #c4c4c4; }
+  border-top: 1px solid #c4c4c4; }
+  .trades-list a {
+    text-decoration: none; }
+    .trades-list a:hover {
+      text-decoration: none; }
 
 .trades-item {
   height: 50px;
@@ -29,8 +35,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #c4c4c4;
-  transition: 0.5 all ease; }
+  border-bottom: 1px solid #c4c4c4;
+  transition: 0.3s all ease;
+  color: #5D5D5D; }
   .trades-item:last-child {
     border-right: none; }
   .trades-item:hover {

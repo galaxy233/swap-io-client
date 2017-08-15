@@ -5,9 +5,9 @@
   margin-top: -45px
 
 .jumbotron
-  background: url('../../assets/clem_cropped_2.jpg')
+  background: url('../../assets/rodion.jpg')
   background-position: center
-  margin-top: 50px
+  margin-top: 45px
   margin-bottom: 0px
   // border-top: 2px solid $black
   // border-bottom: 2px solid $black
@@ -21,10 +21,14 @@
 .logo-box
   text-align: center
   margin: 50px 0px
-  font-size: 36px
+  font-size: 20px
   img
-    max-height: 150px
-    margin-bottom: 50px
+    max-height: 50px
+    margin-bottom: 20px
+  div
+    margin-bottom: 10px
+  p
+    font-size: 12px
 
 @media ( min-width: 768px )
   .grid-divider
@@ -46,8 +50,14 @@
     padding: 0 15px
 
 .featured
+  background-color: #f5f5f5
+  h1
+    font-weight: normal
+    font-size: 24px
+    text-align: center
+    margin-bottom: 30px
   .container
-    background-color: $blue
+    background-color: #f5f5f5
   .header-text
     margin-top: 20px
     > div
@@ -55,10 +65,23 @@
       border-bottom-color: white
 
 .featured-item
-  background-color: $beige
-  height: 250px
+  background-color: white
   width: 100%
+  height: 350px
   margin-bottom: 50px
+  div
+    &:first-child
+      height: 250px
+      overflow: hidden
+    &:last-child
+      padding: 10px 20px
+      h2
+        font-size: 16px
+
+
+  img
+    height: 100%
+
 
 .landing-search-intro
   text-align: center
