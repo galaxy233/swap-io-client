@@ -1,15 +1,16 @@
 import auth0 from 'auth0-js';
+import config from '../../config';
 
 export default class Auth {
 
   constructor() {
 
     this.auth0 = new auth0.WebAuth({
-      domain: 'swapio.auth0.com',
-      clientID: 'ZYhR5yxNmx0Oywmv170VZiyMK0mXXgC4',
-      redirectUri: 'http://localhost:3001/callback',
-      audience: 'http://swap.io/api/',
-      responseType: 'token id_token'
+      domain: config.auth.domain,
+      clientID: config.auth.clientID,
+      redirectUri: config.auth.redirectUri,
+      audience: config.auth.audience,
+      responseType: config.auth.responseType
     });
 
     this.login = this.login.bind(this);
