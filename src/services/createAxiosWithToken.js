@@ -1,6 +1,5 @@
 import axios from 'axios';
 import config from '../config';
-console.log(config);
 
 export const BASE_URL = config.baseURL;
 
