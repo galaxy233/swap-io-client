@@ -10,7 +10,7 @@ import Loader from '../shared/Loader';
 import find from '../../assets/find.png';
 import bball from '../../assets/bball.png';
 import swap from '../../assets/swap.png';
-import './style.css';
+import './style.sass';
 
 class Home extends Component {
   constructor(props) {

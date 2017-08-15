@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Layout } from './components';
 
-import './style.css'
+import './style.sass'
 
 const App = () => (
   <BrowserRouter>

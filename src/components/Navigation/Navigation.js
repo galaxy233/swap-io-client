@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import './style.css'
+import './style.sass'
 import swap from '../../assets/swap.png';
 
 import Auth from '../../services/auth';

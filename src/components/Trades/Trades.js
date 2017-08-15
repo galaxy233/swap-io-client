@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { Header, Loader } from '../shared';
 
-import './Trades.css';
+import './Trades.sass';
 
 import { fetchTrades } from '../../services/trade';
 

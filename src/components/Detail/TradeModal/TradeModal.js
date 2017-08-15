@@ -3,7 +3,6 @@ import {Modal, Button, FormGroup, ControlLabel, FormControl} from 'react-bootstr
 import { initiateTrade } from '../../../services/trade';
 import { fetchItems } from '../../../services/item';
 import FontAwesome from 'react-fontawesome';
-import items from './items.json';
 
 class TradeModal extends Component {
   constructor(props)

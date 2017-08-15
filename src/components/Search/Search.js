@@ -4,7 +4,7 @@ import SearchResults from './SearchResults';
 import { Grid, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import { searchItems } from '../../services/search';
 
-import './Search.css';
+import './Search.sass';
 
 class Search extends Component {
   constructor(props) {

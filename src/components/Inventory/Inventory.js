@@ -6,7 +6,7 @@ import Browser from './Browser';
 import Edit from './Edit';
 import { Header } from '../shared';
 
-import './Inventory.css';
+import './Inventory.sass';
 
 class Inventory extends Component {
   constructor(props) {
