@@ -3,12 +3,13 @@ const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'build')
   },
   devtool: 'cheap-module-source-map',
   module: {
@@ -50,6 +51,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new BaseHrefWebpackPlugin({ baseHref: '/' })
+    new BaseHrefWebpackPlugin({
+      baseHref: '/'
+    }),
+    new CleanWebpackPlugin(['build'])
   ]
 }
