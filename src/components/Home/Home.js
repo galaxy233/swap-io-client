@@ -68,7 +68,7 @@ class Home extends Component {
                 <LogoBox
                   image_url={bball}
                   text="OFFER"
-                  text2="Find items nearby using our custom search"
+                  text2="Post what you have and make offers to trade"
                 />
                 <div className="seperator"></div>
                 </Col>
@@ -76,7 +76,7 @@ class Home extends Component {
                 <LogoBox
                   image_url={swap}
                   text="SWAP"
-                  text2="Find items nearby using our custom search"
+                  text2="Keep the cycle going and swap for more stuff!"
                 />
                 </Col>
             </Row>
