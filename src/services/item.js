@@ -52,6 +52,6 @@ export const uploadImage = (file) => {
 }
 
 export const fetchFeaturedItems = (zipcode) => {
-  return axios.get(BASE_URL + "items/featured")
+  return axios.get(BASE_URL + "items/featured/" + zipcode)
   .then(res => res.data);
 }

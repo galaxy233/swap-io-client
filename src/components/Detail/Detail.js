@@ -93,7 +93,7 @@ const DetailView = ({ item, selectedImage, updateSelectedImage, showModal, openM
         width={"333"}
         height={"250"}
         frameBorder={"0"} style={{"border":"0"}}
-        src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyA7nSVnMtpMyU4WynRg0fPBuD8BcDYYbck&q=84109"}
+        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyA7nSVnMtpMyU4WynRg0fPBuD8BcDYYbck&q=${item.zipcode}`}
         allowFullScreen>
       </iframe>
     </div>

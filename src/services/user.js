@@ -28,7 +28,10 @@ export const getZipcode = new Promise((resolve, reject) => {
           lat,
           long,
         }
-      }).then(res => resolve(res.data.zipcode))
+      }).then(res => {
+        localStorage.setItem("zipcode", res.data.zipcode)
+        resolve(res.data.zipcode)
+      })
     })
   } else {
     reject(new Error("Browser does not support geolocation."))

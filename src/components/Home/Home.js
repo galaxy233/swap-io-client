@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { Grid, Col, Row, Jumbotron, Button, Thumbnail, Image } from 'react-bootstrap';
 import zipcodes from 'zipcodes';
 import { fetchFeaturedItems } from '../../services/item';
@@ -135,7 +135,7 @@ const FeaturedItem = ({ item }) => {
         }>
         </div>
         <div>
-          <h2>{ item.name }</h2>
+          <Link to={`/item/${item.id}`}><h2>{ item.name }</h2></Link>
           <h5>{ item.zipcode }</h5>
         </div>
       </div>
