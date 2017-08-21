@@ -7,8 +7,7 @@ import ImageSelect from './ImageSelect';
 import { TradeModal } from './TradeModal';
 import FontAwesome from 'react-fontawesome';
 
-import item from './item.json';
-import './Detail.css';
+import './Detail.sass';
 
 class Detail extends Component {
   constructor(props) {

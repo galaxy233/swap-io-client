@@ -3,7 +3,7 @@ import Loader from 'halogen/FadeLoader';
 import { Button } from 'react-bootstrap';
 import DebounceInput from 'react-debounce-input';
 import { getUser, createUser, getZipcode, checkUsername } from '../../services/user';
-import './style.css';
+import './style.sass';
 
 import Auth from '../../services/auth';
 const auth = new Auth();

@@ -1,6 +1,7 @@
 import axios from 'axios';
+import config from '../config';
 
-export const BASE_URL = "http://localhost:3000/api/";
+export const BASE_URL = config.baseURL;
 
 const getToken = () => {
   return localStorage.getItem("access_token");

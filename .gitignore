@@ -1,1 +1,4 @@
 *.psd
+build
+dist
+config.js

@@ -1,8 +1,6 @@
 import createAxios from './createAxiosWithToken';
 import {BASE_URL} from './createAxiosWithToken';
 import axios from 'axios';
-import geocoder from 'geocoder';
-
 
 export const createUser = (username, zipcode) => {
   let data = {username, zipcode};
@@ -25,14 +23,12 @@ export const getZipcode = new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition((pos) => {
       let lat = pos.coords.latitude;
       let long = pos.coords.longitude;
-      geocoder.reverseGeocode(lat, long, (err, data) => {
-        if (err) {
-          reject(err)
-        } else {
-          let zipcode = data.results[0].formatted_address.match(/,\s\w{2}\s(\d{5})/)[1]
-          resolve(zipcode)
+      axios.get(BASE_URL + "getzipcode", {
+        params: {
+          lat,
+          long,
         }
-      })
+      }).then(res => resolve(res.data.zipcode))
     })
   } else {
     reject(new Error("Browser does not support geolocation."))
